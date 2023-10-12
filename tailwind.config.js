@@ -7,8 +7,14 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
   ],
+  variants: {
+  },
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        '5-100px': 'repeat(5, 100px)'
+      },
+    },
   },
   plugins: [],
 }
