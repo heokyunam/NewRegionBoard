@@ -1,9 +1,7 @@
 <template>
-    <Map :maps="maps"/>
+    <Map />
 </template>
 <script lang='ts' setup>
-    import getMap from '@/composables/map';
-    const { maps } = getMap();
 
     onMounted(() => {
 

@@ -1,22 +1,15 @@
+
 <template>
     <div class="container">
-        <div class="item" :class="tile.className" v-for="tile in maps" :key="tile.id">
+        <div class="item" :class="tile.className" v-for="tile in drawings" :key="tile.id">
             <img v-if="tile.tileType !== 'Empty'" :src="tile.tileImageUrl" />
         </div>
     </div>
 </template>
 <script lang='ts' setup>
-    import { Tile } from '@/composables/tile';
+    import { getMap } from "~/composables/map";
 
-    const { tiles } = defineProps({
-        tiles: {
-            type: Array as PropType<Tile[]>
-        },
-        maps: {
-            type: Array as PropType<(Tile)[]>,
-            required: true
-        }
-    })
+    const { maps, drawings } = getMap();
 </script>
 <style lang='scss'>
     .container {
