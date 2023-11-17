@@ -1,6 +1,6 @@
 <template>
-    <!-- <Map /> -->
-    <Menu />
+    <Map />
+    <!-- <Menu /> -->
 </template>
 <script lang='ts' setup>
 

@@ -1,0 +1,6 @@
+
+
+interface PlayerCharacter {
+    idx: number;
+
+}

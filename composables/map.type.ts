@@ -7,4 +7,5 @@ export interface Tile {
     tileUnit: TileUnit;
     id: string;
     tileImageUrl: string | null;
+    idx: number;
 }

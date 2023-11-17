@@ -38,11 +38,12 @@ export const getMap = () => {
             tileType,
             tileUnit: 'Empty',
             id: `${tileType}-${idx}`,
+            idx: idx,
             tileImageUrl
         }
     });
 
-    drawings.value = tileGrid.map((tile, idx) => {
+    drawings.value = tileGrid.map((tile, idx): Tile => {
         if(tile !== null) {
             return maps.value[tile];
         } else {
