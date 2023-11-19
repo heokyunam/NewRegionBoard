@@ -1,6 +1,6 @@
 <template>
-    <div class="p-2" @click="roll">
-        <img :src="diceImage" >
+    <div class="p-2">
+        <img :src="diceImages[number-1]" >
     </div>
 </template>
 <script lang='ts' setup>
@@ -11,31 +11,16 @@
     import dice5 from '@/assets/images/dice_5.png'
     import dice6 from '@/assets/images/dice_6.png'
 
-    const { number, onRoll } = defineProps<{
+    const { number } = defineProps<{
         number: 1|2|3|4|5|6,
-        onRoll: (number: number) => void
+        // onRoll: (number: number) => void
     }>();
+
+    console.log("change number", number);
     
     const diceImages = [dice1, dice2, dice3, dice4, dice5, dice6]
-    const diceImage = ref(diceImages[number-1]);
-
-    const timerRef = ref<NodeJS.Timeout>();
-    const numberRef = ref<number>(0);
-
-    const roll = () => {
-        if(timerRef.value) {
-            clearInterval(timerRef.value);
-
-            onRoll(numberRef.value);
-            timerRef.value = undefined;
-        } else {
-            timerRef.value = setInterval(() => {
-                numberRef.value = Math.floor(Math.random()*6);
-
-                diceImage.value = diceImages[numberRef.value];
-            },100)
-        }
-    }
+    // const diceImage = ref(diceImages[number-1]);
+    // const diceImage = computed(() => diceImages[number-1])
 </script>
 <style lang='scss'>
     
