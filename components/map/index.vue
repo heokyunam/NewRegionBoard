@@ -18,29 +18,18 @@
 </template>
 <script lang='ts' setup>
     import { getMap } from "~/composables/map";
-    import { UserOrder, RollTheDice, UserOrderFunction } from "~/composables/ui";
+    import { UserOrder, RollTheDice, UserOrderFunction } from "~/composables/ui/index.type";
 
     const { maps, drawings } = getMap();
-    // const maps: globalThis.Ref<Tile[]> = map.maps;
-    // const drawings: globalThis.Ref<Tile[]> = map.drawings;
 
     const { position, moveFront } = getPosition(maps.value.length);
 
     const onUserOrder: UserOrderFunction = (order: UserOrder) => {
-        console.log(order);
         
         if(order instanceof RollTheDice) {
             moveFront(order.value);
-            console.log("move!");
         }
     }
-
-    // const position = ref(0);
-
-    // const onRoll = (number: number) => {
-    //     console.log(map.maps.value.length);
-    //     position.value = (position.value + number + 1) % map.maps.value.length;
-    // }
 </script>
 <style>
 </style>

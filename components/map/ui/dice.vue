@@ -10,17 +10,13 @@
     import dice4 from '@/assets/images/dice_4.png'
     import dice5 from '@/assets/images/dice_5.png'
     import dice6 from '@/assets/images/dice_6.png'
+    import { DiceNumber } from '~/composables/ui/dice'
 
     const { number } = defineProps<{
-        number: 1|2|3|4|5|6,
-        // onRoll: (number: number) => void
+        number: DiceNumber,
     }>();
-
-    console.log("change number", number);
     
     const diceImages = [dice1, dice2, dice3, dice4, dice5, dice6]
-    // const diceImage = ref(diceImages[number-1]);
-    // const diceImage = computed(() => diceImages[number-1])
 </script>
 <style lang='scss'>
     

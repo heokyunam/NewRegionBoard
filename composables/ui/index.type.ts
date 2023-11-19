@@ -28,3 +28,7 @@ export class Collect extends UserOrder {
 // export declare type UserOrder = RollTheDice | Collect;
 
 export declare type UserOrderFunction = (order: UserOrder) => void;
+
+export enum UIState {
+    dice, choice, 
+}
